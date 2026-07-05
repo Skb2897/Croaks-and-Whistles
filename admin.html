@@ -1,1 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin &mdash; Frog Call Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Frog Call Atlas <em>/ Admin</em></a>
+    <nav>
+      <a href="index.html">Catalog</a>
+      <a href="cards.html">Print cards</a>
+    </nav>
+  </div>
+</header>
 
+<div class="wrap">
+
+  <!-- Sign-in gate -->
+  <div class="admin-gate" id="admin-gate">
+    <h2>Connect to GitHub</h2>
+    <div class="admin-warning">
+      This token is stored only in this browser's local storage and used
+      to call the GitHub API directly &mdash; it is never sent anywhere else.
+      Still, use a <strong>fine-grained personal access token</strong>
+      scoped to only this one repository with <strong>Contents:
+      read and write</strong> permission, nothing more. Only do this on a
+      device you trust, since anyone with access to this browser profile
+      could read the token.
+    </div>
+    <div class="field">
+      <label for="gh-owner-repo">Repository (owner/repo)</label>
+      <input type="text" id="gh-owner-repo" placeholder="yourusername/frog-call-atlas">
+    </div>
+    <div class="field">
+      <label for="gh-branch">Branch</label>
+      <input type="text" id="gh-branch" value="main">
+    </div>
+    <div class="field">
+      <label for="gh-token">Personal access token</label>
+      <input type="password" id="gh-token" placeholder="github_pat_...">
+    </div>
+    <button class="btn" id="connect-btn">Connect</button>
+    <p class="field-hint" id="connect-status"></p>
+  </div>
+
+  <!-- Main admin UI, hidden until connected -->
+  <div id="admin-main" style="display:none;">
+    <div class="admin-toolbar">
+      <span class="admin-status" id="admin-status">Connected</span>
+      <div>
+        <button class="btn secondary" id="new-species-btn">+ New species</button>
+        <button class="btn secondary" id="signout-btn">Sign out</button>
+      </div>
+    </div>
+
+    <div class="admin-layout">
+      <div class="admin-list" id="admin-list"></div>
+
+      <div class="admin-panel" id="admin-panel">
+        <h3 id="panel-title">Select a species</h3>
+        <form id="species-form" style="display:none;">
+          <div class="field-row">
+            <div class="field">
+              <label for="f-family">Family</label>
+              <input type="text" id="f-family" required>
+            </div>
+            <div class="field">
+              <label for="f-accession">Accession no.</label>
+              <input type="text" id="f-accession">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-genus">Genus</label>
+              <input type="text" id="f-genus" required>
+            </div>
+            <div class="field">
+              <label for="f-species">Species epithet</label>
+              <input type="text" id="f-species" required>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-authority">Authority</label>
+              <input type="text" id="f-authority" placeholder="(Author, Year)">
+            </div>
+            <div class="field">
+              <label for="f-common">Common name</label>
+              <input type="text" id="f-common">
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-slug">Slug (used in the URL &amp; filenames)</label>
+            <input type="text" id="f-slug">
+            <p class="field-hint">Auto-filled from genus + species. Change only for a brand-new entry &mdash; changing it on an existing one creates a new page rather than renaming.</p>
+          </div>
+          <div class="field">
+            <label for="f-identification">Identification</label>
+            <textarea id="f-identification" placeholder="How to identify this species in the field&hellip;"></textarea>
+          </div>
+          <div class="field">
+            <label for="f-habitat">Habitat</label>
+            <textarea id="f-habitat" placeholder="Habitat and distribution notes&hellip;"></textarea>
+          </div>
+
+          <div class="field">
+            <label>Call recording</label>
+            <div id="audio-current" class="field-hint"></div>
+            <div class="dropzone" id="audio-dropzone">Click to choose an audio file, or drag one here (.mp3, .wav, .m4a)</div>
+            <input type="file" id="audio-input" accept="audio/*" style="display:none;">
+            <div id="audio-viz-container"></div>
+          </div>
+
+          <div class="field">
+            <label>QR code</label>
+            <div class="qr-preview">
+              <canvas id="qr-canvas" width="120" height="120"></canvas>
+              <div>
+                <p class="field-hint" id="qr-url-hint"></p>
+                <button type="button" class="btn secondary" id="commit-qr-btn">Save QR to repo</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; margin-top:20px;">
+            <button type="submit" class="btn" id="save-btn">Save changes</button>
+            <button type="button" class="btn danger" id="delete-btn">Delete species</button>
+          </div>
+          <p class="field-hint" id="save-status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/util.js"></script>
+<script src="assets/js/audio-viz.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>
