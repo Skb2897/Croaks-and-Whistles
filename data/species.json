@@ -7,18 +7,6 @@
   },
   "species": [
     {
-      "slug": "indirana-duboisi",
-      "accession": "RX-005",
-      "family": "Ranixalidae",
-      "genus": "Indirana",
-      "species": "duboisi",
-      "authority": "",
-      "common_name": "",
-      "identification": "",
-      "habitat": "",
-      "audio": ""
-    },
-    {
       "slug": "indirana-gundia",
       "accession": "RX-006",
       "family": "Ranixalidae",
