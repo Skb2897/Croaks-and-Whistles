@@ -41,6 +41,18 @@
       "identification": "Horizontal pupil; Wrinkled dorsum; Subocular gland is prominent",
       "habitat": "In water streams, stream edges, in evergreen moist deciduous forest, roadside streams",
       "audio": "assets/audio/nyctibatrachus-jog.wav"
+    },
+    {
+      "slug": "raorchestes-luteolus",
+      "family": "Rhacophoridae",
+      "accession": "Rao_01",
+      "genus": "Raorchestes",
+      "species": "luteolus",
+      "authority": "Kuramoto and Joshy, 2003",
+      "common_name": "Coorg Yellow Bush Frog",
+      "identification": "Blue ring around the eye; small frog, males measuring 24–29 mm ; The dominant colour form is yellowish brown with light-brownish lines or light-yellowish with discontinuous light-brown lines",
+      "habitat": "Arboreal: Bushes, commonly found in disturbed habitats, near coffee plantations adjacent to primary forests and waysides.",
+      "audio": "assets/audio/raorchestes-luteolus.wav"
     }
   ]
 }
