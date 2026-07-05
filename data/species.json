@@ -7,18 +7,6 @@
   },
   "species": [
     {
-      "slug": "indirana-gundia",
-      "accession": "RX-006",
-      "family": "Ranixalidae",
-      "genus": "Indirana",
-      "species": "gundia",
-      "authority": "",
-      "common_name": "",
-      "identification": "",
-      "habitat": "",
-      "audio": ""
-    },
-    {
       "slug": "indirana-leithii",
       "accession": "RX-007",
       "family": "Ranixalidae",
