@@ -7,18 +7,6 @@
   },
   "species": [
     {
-      "slug": "indirana-sarojamma",
-      "accession": "RX-011",
-      "family": "Ranixalidae",
-      "genus": "Indirana",
-      "species": "sarojamma",
-      "authority": "",
-      "common_name": "",
-      "identification": "",
-      "habitat": "",
-      "audio": ""
-    },
-    {
       "slug": "indirana-semipalmata",
       "accession": "RX-012",
       "family": "Ranixalidae",
