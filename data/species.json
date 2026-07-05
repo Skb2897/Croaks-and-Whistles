@@ -53,6 +53,18 @@
       "identification": "Blue ring around the eye; small frog, males measuring 24–29 mm ; The dominant colour form is yellowish brown with light-brownish lines or light-yellowish with discontinuous light-brown lines",
       "habitat": "Arboreal: Bushes, commonly found in disturbed habitats, near coffee plantations adjacent to primary forests and waysides.",
       "audio": "assets/audio/raorchestes-luteolus.wav"
+    },
+    {
+      "slug": "clinotarsus-curtipes",
+      "family": "Ranidae",
+      "accession": "Rad_01",
+      "genus": "Clinotarsus",
+      "species": "curtipes",
+      "authority": "Jerdon, 1854",
+      "common_name": "Bi-coloured frog",
+      "identification": "Reddish brown Iris; Large Tympanum; Strong fold from eye to shoulder; Back yellow, sides brown",
+      "habitat": "On land- forest floor, leaf litter, tree base, stream sides, dam backwaters",
+      "audio": "assets/audio/clinotarsus-curtipes.wav"
     }
   ]
 }
