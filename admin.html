@@ -171,6 +171,20 @@ textarea { min-height:120px; resize:vertical; }
 
 <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
 <script src="assets/js/util.js"></script>
+<script>
+const form = document.getElementById("speciesForm");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  console.log("speciesName:", data.get("speciesName"));
+  console.log("audioFile:", data.get("audioFile"));
+  console.log("imageFile:", data.get("imageFile"));
+  console.log("description:", data.get("description"));
+});
+</script>
 <script src="assets/js/audio-viz.js"></script>
 <script src="assets/js/admin.js"></script>
 </body>
