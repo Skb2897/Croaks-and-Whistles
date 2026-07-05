@@ -7,18 +7,6 @@
   },
   "species": [
     {
-      "slug": "indirana-beddomii",
-      "accession": "RX-001",
-      "family": "Ranixalidae",
-      "genus": "Indirana",
-      "species": "beddomii",
-      "authority": "",
-      "common_name": "",
-      "identification": "",
-      "habitat": "",
-      "audio": ""
-    },
-    {
       "slug": "indirana-bhadrai",
       "accession": "RX-002",
       "family": "Ranixalidae",
