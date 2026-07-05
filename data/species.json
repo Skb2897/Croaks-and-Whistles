@@ -245,6 +245,18 @@
       "identification": "Warty Skin\nTrunkated finger and toe tips\nGolden iris interspersed with black lines",
       "habitat": "Arboreal: On trees branching along stream sides in moist-evergreen to deciduous forest.",
       "audio": "assets/audio/pedostibes-tuberculosus.wav"
+    },
+    {
+      "slug": "micrixalus-kottigeharensis",
+      "family": "Micrixalidae",
+      "accession": "Mic_01",
+      "genus": "Micrixalus",
+      "species": "kottigeharensis",
+      "authority": "Rao, 1937",
+      "common_name": "Kottigehara Dancing Frog",
+      "identification": "",
+      "habitat": "",
+      "audio": "assets/audio/micrixalus-kottigeharensis.wav"
     }
   ]
 }
