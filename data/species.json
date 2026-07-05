@@ -7,18 +7,6 @@
   },
   "species": [
     {
-      "slug": "indirana-longicrus",
-      "accession": "RX-008",
-      "family": "Ranixalidae",
-      "genus": "Indirana",
-      "species": "longicrus",
-      "authority": "",
-      "common_name": "",
-      "identification": "",
-      "habitat": "",
-      "audio": ""
-    },
-    {
       "slug": "indirana-paramakri",
       "accession": "RX-009",
       "family": "Ranixalidae",
