@@ -7,18 +7,6 @@
   },
   "species": [
     {
-      "slug": "indirana-leithii",
-      "accession": "RX-007",
-      "family": "Ranixalidae",
-      "genus": "Indirana",
-      "species": "leithii",
-      "authority": "",
-      "common_name": "",
-      "identification": "",
-      "habitat": "",
-      "audio": ""
-    },
-    {
       "slug": "indirana-longicrus",
       "accession": "RX-008",
       "family": "Ranixalidae",
