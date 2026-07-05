@@ -45,11 +45,6 @@ function renderSpecies(sp, cfg) {
   if (sp.habitat) { habEl.textContent = sp.habitat; habEl.classList.remove('tbd'); }
   else { habEl.textContent = 'No habitat notes yet.'; habEl.classList.add('tbd'); }
 
-  // QR block
-  const qrImg = document.getElementById('species-qr');
-  qrImg.src = `assets/qr/${sp.slug}.png`;
-  qrImg.alt = `QR code linking to the ${sp.genus} ${sp.species} entry`;
-}
 
 document.addEventListener('DOMContentLoaded', async () => {
   const slug = qs('slug');
