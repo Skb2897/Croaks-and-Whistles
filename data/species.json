@@ -7,18 +7,6 @@
   },
   "species": [
     {
-      "slug": "indirana-brachytarsus",
-      "accession": "RX-003",
-      "family": "Ranixalidae",
-      "genus": "Indirana",
-      "species": "brachytarsus",
-      "authority": "",
-      "common_name": "",
-      "identification": "",
-      "habitat": "",
-      "audio": ""
-    },
-    {
       "slug": "indirana-chiravasi",
       "accession": "RX-004",
       "family": "Ranixalidae",
