@@ -7,18 +7,6 @@
   },
   "species": [
     {
-      "slug": "indirana-paramakri",
-      "accession": "RX-009",
-      "family": "Ranixalidae",
-      "genus": "Indirana",
-      "species": "paramakri",
-      "authority": "",
-      "common_name": "",
-      "identification": "",
-      "habitat": "",
-      "audio": ""
-    },
-    {
       "slug": "indirana-salelkari",
       "accession": "RX-010",
       "family": "Ranixalidae",
