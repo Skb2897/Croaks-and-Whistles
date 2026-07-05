@@ -29,6 +29,18 @@
       "identification": "Extremely small; males are 22–24 mm, while females are slightly larger at 28–33 mm.\nStream-lined body with pointed snout.",
       "habitat": "Fast-flowing streams in primary and secondary forests.",
       "audio": "assets/audio/micrixalus-kottigeharensis.wav"
+    },
+    {
+      "slug": "nyctibatrachus-jog",
+      "family": "Nyctibatrachidae",
+      "accession": "Nyc_01",
+      "genus": "Nyctibatrachus",
+      "species": "jog",
+      "authority": "Biju, 2011",
+      "common_name": "Jog Night Frog",
+      "identification": "Horizontal pupil; Wrinkled dorsum; Subocular gland is prominent",
+      "habitat": "In water streams, stream edges, in evergreen moist deciduous forest, roadside streams",
+      "audio": "assets/audio/nyctibatrachus-jog.wav"
     }
   ]
 }
