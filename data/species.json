@@ -7,18 +7,6 @@
   },
   "species": [
     {
-      "slug": "walkerana-leptodactyla",
-      "accession": "RX-017",
-      "family": "Ranixalidae",
-      "genus": "Walkerana",
-      "species": "leptodactyla",
-      "authority": "(Boulenger, 1882)",
-      "common_name": "Slender-toed Leaping Frog",
-      "identification": "",
-      "habitat": "",
-      "audio": ""
-    },
-    {
       "slug": "walkerana-muduga",
       "accession": "RX-018",
       "family": "Ranixalidae",
