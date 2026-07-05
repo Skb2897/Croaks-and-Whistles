@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Species &mdash; Frog Call Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Frog Call Atlas</a>
+    <nav>
+      <a href="index.html">Catalog</a>
+      <a href="cards.html">Print cards</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<div id="species-root">
+<header class="species-header">
+  <div class="wrap">
+    <span class="family-tag">Family <span id="species-family"></span></span>
+    <span class="acc" id="species-acc"></span>
+    <h1><span class="genus-tag" id="species-genus"></span> <i id="species-epithet"></i></h1>
+    <div class="authority" id="species-authority"></div>
+    <div class="common-name" id="species-common"></div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Call</h2>
+    <div class="call-card" id="call-card" data-player data-src="">
+      <div class="player-row">
+        <button class="play-btn" aria-label="Play call" disabled>&#9654;</button>
+        <div class="voiceprint" id="call-voiceprint"></div>
+        <span class="player-time">--:-- / --:--</span>
+      </div>
+      <p class="empty-title" id="call-empty-msg" style="display:none;">No recording catalogued yet</p>
+      <div id="call-viz"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Identification</h2>
+    <p class="prose" id="identification-text"></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Habitat</h2>
+    <p class="prose" id="habitat-text"></p>
+  </div>
+</section>
+
+<section class="section" style="border-bottom:none;">
+  <div class="wrap">
+    <h2>Card &amp; QR</h2>
+    <div class="qr-block">
+      <img id="species-qr" src="" alt="" width="120" height="120" onerror="this.style.display='none'">
+      <p class="qr-note">This QR points to this page. Add or regenerate it from the <a href="admin.html">admin panel</a>, or with <code>tools/generate_qr_cards.py</code>.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    A field reference for anuran advertisement calls &middot;
+    <a href="https://github.com/">source on GitHub</a>
+  </div>
+</footer>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/audio-viz.js"></script>
+<script src="assets/js/player.js"></script>
+<script src="assets/js/species.js"></script>
+</body>
+</html>

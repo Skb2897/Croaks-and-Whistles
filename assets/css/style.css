@@ -1,20 +1,24 @@
 /* ============================================================
    Frog Call Atlas -- design tokens
-   Palette: monsoon forest floor at night, not a template default.
+   Palette: herbarium specimen card, not a template default.
+   Crisp white sheet, deep forest-green ink, small collector's-
+   label details (perforated corners, stamped accession marks).
    ============================================================ */
 :root {
-  --bg: #141c11;
-  --surface: #1c2618;
-  --surface-raised: #24301f;
-  --line: #37432f;
-  --ink: #eae5d3;
-  --ink-dim: #a7ab96;
-  --ink-faint: #6f7566;
-  --moss: #93a866;
-  --moss-dim: #6d7e4c;
-  --amber: #c98a3d;
-  --wet-stone: #5c7d85;
-  --danger: #b5573f;
+  --bg: #fdfdfb;
+  --paper: #ffffff;
+  --surface: #f4f6f2;
+  --surface-raised: #eef1ea;
+  --line: #d8ddd1;
+  --line-strong: #b9c2ac;
+  --ink: #1c2b1f;
+  --ink-dim: #4d5c4c;
+  --ink-faint: #8a9385;
+  --forest: #1f3d2e;
+  --forest-dim: #3e5c48;
+  --clay: #a4562f;
+  --wet-stone: #3f6373;
+  --danger: #a3402e;
 
   --font-display: "Fraunces", "Iowan Old Style", serif;
   --font-body: "Source Sans 3", "Segoe UI", sans-serif;
@@ -34,9 +38,6 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background: var(--bg);
-  background-image:
-    radial-gradient(ellipse at 20% -10%, rgba(147, 168, 102, 0.08), transparent 45%),
-    radial-gradient(ellipse at 90% 10%, rgba(92, 125, 133, 0.07), transparent 40%);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
@@ -44,10 +45,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: var(--moss); text-decoration: none; }
-a:hover { color: var(--amber); }
-a:focus-visible, button:focus-visible, input:focus-visible {
-  outline: 2px solid var(--amber);
+a { color: var(--forest); text-decoration: none; }
+a:hover { color: var(--clay); }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--clay);
   outline-offset: 2px;
 }
 
@@ -59,7 +60,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 /* ---------- Site header ---------- */
 .site-header {
-  border-bottom: 1px solid var(--line);
+  border-bottom: 2px solid var(--forest);
   padding: 22px 0;
 }
 .site-header .wrap {
@@ -76,7 +77,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   color: var(--ink);
   letter-spacing: 0.01em;
 }
-.brand em { color: var(--moss); font-style: italic; }
+.brand em { color: var(--forest); font-style: italic; }
 .site-header nav a {
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -85,7 +86,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   color: var(--ink-dim);
   margin-left: 20px;
 }
-.site-header nav a:hover { color: var(--amber); }
+.site-header nav a:hover { color: var(--clay); }
 
 /* ---------- Hero (index only) ---------- */
 .hero {
@@ -93,13 +94,14 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   border-bottom: 1px solid var(--line);
   position: relative;
   overflow: hidden;
+  background-image: radial-gradient(ellipse at 90% -20%, rgba(31, 61, 46, 0.05), transparent 45%);
 }
 .hero-eyebrow {
   font-family: var(--font-mono);
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--moss);
+  color: var(--forest);
   margin: 0 0 14px;
 }
 .hero h1 {
@@ -108,9 +110,9 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-size: clamp(2.1rem, 5vw, 3.4rem);
   line-height: 1.08;
   margin: 0 0 18px;
-  max-width: 14ch;
+  max-width: 18ch;
 }
-.hero h1 i { color: var(--moss); }
+.hero h1 i { color: var(--forest); }
 .hero p.lede {
   max-width: 56ch;
   color: var(--ink-dim);
@@ -144,14 +146,41 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   color: var(--ink-faint);
 }
 
+/* ---------- Search / filter bar ---------- */
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 18px 0 0;
+}
+.filter-bar input[type="search"], .filter-bar select {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  padding: 9px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+}
+.filter-bar input[type="search"] { flex: 1; min-width: 180px; }
+
 /* ---------- Ledger (species list) ---------- */
 .ledger { padding: 8px 0 60px; }
+.family-heading {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--clay);
+  margin: 46px 0 2px;
+}
 .genus-heading {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 1.15rem;
-  color: var(--moss);
-  margin: 40px 0 4px;
+  color: var(--forest);
+  margin: 10px 0 4px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--line);
 }
@@ -197,18 +226,23 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   letter-spacing: 0.06em;
   padding: 4px 9px;
   border-radius: 20px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   color: var(--ink-faint);
   white-space: nowrap;
   justify-self: start;
 }
-.status-pill.pending { color: var(--ink-faint); }
-.status-pill.catalogued { color: var(--moss); border-color: var(--moss-dim); }
+.status-pill.catalogued { color: var(--forest); border-color: var(--forest-dim); }
 .entry .voiceprint { justify-self: end; }
 
 @media (max-width: 640px) {
   .entry { grid-template-columns: 44px 1fr; grid-template-rows: auto auto; }
   .entry .status-pill, .entry .voiceprint { grid-column: 2; justify-self: start; margin-top: 4px; }
+}
+
+.empty-state {
+  padding: 40px 4px;
+  color: var(--ink-faint);
+  font-style: italic;
 }
 
 /* ---------- Species page ---------- */
@@ -222,6 +256,15 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   color: var(--ink-faint);
   letter-spacing: 0.06em;
 }
+.species-header .family-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clay);
+  display: block;
+  margin-bottom: 6px;
+}
 .species-header h1 {
   font-family: var(--font-display);
   font-style: italic;
@@ -231,7 +274,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 .species-header .genus-tag {
   font-style: normal;
-  color: var(--moss);
+  color: var(--forest);
 }
 .species-header .authority {
   font-family: var(--font-mono);
@@ -250,7 +293,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--moss);
+  color: var(--forest);
   margin: 0 0 18px;
 }
 
@@ -286,15 +329,16 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .play-btn {
   width: 44px; height: 44px;
   border-radius: 50%;
-  border: 1px solid var(--moss-dim);
-  background: var(--surface-raised);
-  color: var(--moss);
+  border: 1px solid var(--forest-dim);
+  background: var(--paper);
+  color: var(--forest);
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
   font-size: 1rem;
 }
-.play-btn:hover { background: var(--moss); color: var(--bg); }
+.play-btn:hover { background: var(--forest); color: #fff; }
+.play-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 .player-row .voiceprint { flex: 1; }
 .player-time {
   font-family: var(--font-mono);
@@ -303,32 +347,40 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   white-space: nowrap;
 }
 
-/* Field data table */
-table.field-data {
-  width: 100%;
-  border-collapse: collapse;
+/* Spectrogram / oscillogram visuals */
+.viz-block { margin-top: 16px; }
+.viz-tabs { display: flex; gap: 8px; margin-bottom: 8px; }
+.viz-tabs button {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
-}
-table.field-data th {
-  text-align: left;
-  color: var(--ink-faint);
-  font-weight: 400;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.68rem;
-  padding: 8px 12px 8px 0;
-  border-bottom: 1px solid var(--line);
+  letter-spacing: 0.06em;
+  padding: 5px 11px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink-dim);
+  border-radius: 20px;
+  cursor: pointer;
 }
-table.field-data td {
-  padding: 10px 12px 10px 0;
-  border-bottom: 1px solid var(--line);
-  color: var(--ink);
+.viz-tabs button.active { background: var(--forest); color: #fff; border-color: var(--forest); }
+.viz-canvas-wrap {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #0e1a13;
+  overflow: hidden;
+  position: relative;
 }
-table.field-data td.tbd { color: var(--ink-faint); font-style: italic; }
+.viz-canvas-wrap canvas { display: block; width: 100%; height: 160px; }
+.viz-status {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  margin-top: 6px;
+}
 
-.prose { color: var(--ink-dim); max-width: 68ch; }
-.prose.tbd { font-style: italic; color: var(--ink-faint); }
+/* Identification / habitat prose */
+.prose { color: var(--ink-dim); max-width: 68ch; white-space: pre-line; }
+.prose.tbd { font-style: italic; color: var(--ink-faint); white-space: normal; }
 
 .qr-block {
   display: flex;
@@ -337,7 +389,7 @@ table.field-data td.tbd { color: var(--ink-faint); font-style: italic; }
   flex-wrap: wrap;
 }
 .qr-block .qr-note { color: var(--ink-dim); font-size: 0.9rem; max-width: 42ch; }
-.qr-block img { background: #fff; padding: 8px; border-radius: 4px; }
+.qr-block img { background: #fff; padding: 8px; border-radius: 4px; border: 1px solid var(--line); }
 
 /* ---------- Footer ---------- */
 .site-footer {
@@ -369,10 +421,151 @@ table.field-data td.tbd { color: var(--ink-faint); font-style: italic; }
   color: #111;
   break-inside: avoid;
 }
-.qr-card img { width: 96px; height: 96px; }
+.qr-card img, .qr-card canvas { width: 96px; height: 96px; }
 .qr-card .card-sci { font-family: var(--font-display); font-style: italic; font-size: 1rem; margin: 0; }
 .qr-card .card-acc { font-family: var(--font-mono); font-size: 0.7rem; color: #666; }
 .qr-card .card-common { font-size: 0.82rem; color: #444; }
 @media (max-width: 560px) {
   .card-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   Admin panel
+   ============================================================ */
+.admin-gate {
+  max-width: 480px;
+  margin: 60px auto;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.admin-gate h2 { margin-top: 0; }
+.admin-warning {
+  background: #fbf3ea;
+  border: 1px solid #e3c9a3;
+  color: #6b4a20;
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+}
+
+.field { margin-bottom: 16px; }
+.field label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+  margin-bottom: 6px;
+}
+.field input, .field textarea, .field select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+}
+.field textarea { min-height: 90px; resize: vertical; font-family: var(--font-body); }
+.field-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.field-row .field { flex: 1; min-width: 160px; }
+.field-hint { font-size: 0.78rem; color: var(--ink-faint); margin-top: 4px; }
+
+.btn {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 11px 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--forest);
+  background: var(--forest);
+  color: #fff;
+  cursor: pointer;
+}
+.btn:hover { background: var(--forest-dim); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn.secondary { background: var(--paper); color: var(--forest); }
+.btn.secondary:hover { background: var(--surface); }
+.btn.danger { background: var(--paper); color: var(--danger); border-color: var(--danger); }
+.btn.danger:hover { background: #fbeceb; }
+
+.admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.admin-status {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+}
+.admin-status.ok { color: var(--forest); }
+.admin-status.err { color: var(--danger); }
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  padding: 28px 0 80px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .admin-layout { grid-template-columns: 1fr; }
+}
+.admin-list {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.admin-list-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+.admin-list-item:hover { background: var(--surface); }
+.admin-list-item.active { background: var(--surface-raised); border-left: 3px solid var(--forest); }
+.admin-list-item .sci { font-style: italic; color: var(--ink); display: block; font-size: 0.95rem; }
+.admin-list-item .acc { font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink-faint); }
+
+.admin-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  background: var(--paper);
+}
+.admin-panel h3 {
+  font-family: var(--font-display);
+  font-style: italic;
+  margin-top: 0;
+}
+
+.dropzone {
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  padding: 22px;
+  text-align: center;
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+  cursor: pointer;
+  background: var(--surface);
+}
+.dropzone.drag { border-color: var(--forest); color: var(--forest); background: var(--surface-raised); }
+
+.qr-preview { display: flex; align-items: center; gap: 16px; margin-top: 10px; }
+.qr-preview canvas { border: 1px solid var(--line); border-radius: 4px; background: #fff; padding: 6px; }

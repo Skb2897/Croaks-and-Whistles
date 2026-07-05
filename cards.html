@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Printable QR cards -- Frog Call Atlas</title>
+<title>Printable QR cards &mdash; Frog Call Atlas</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;1,500&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
 <style>
-  body { background: #f4f1ea; }
+  body { background: #f4f6f2; }
   .page-head { padding: 30px 24px 0; }
   .page-head h1 { font-family: var(--font-display); color: #111; }
   .page-head p { color: #555; font-family: var(--font-body); }
@@ -20,161 +21,49 @@
     <p>One card per species &middot; cut along the dashed borders &middot; use your browser's Print (Ctrl/Cmd+P) to print this page.</p>
   </div>
   <div class="wrap-cards">
-    <div class="card-grid">
-      
-    <div class="qr-card">
-      <img src="assets/qr/indirana-beddomii.png" alt="QR code for Indirana beddomii">
-      <div>
-        <div class="card-acc">RX-001</div>
-        <p class="card-sci"><i>Indirana beddomii</i></p>
-        
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/indirana-bhadrai.png" alt="QR code for Indirana bhadrai">
-      <div>
-        <div class="card-acc">RX-002</div>
-        <p class="card-sci"><i>Indirana bhadrai</i></p>
-        
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/indirana-brachytarsus.png" alt="QR code for Indirana brachytarsus">
-      <div>
-        <div class="card-acc">RX-003</div>
-        <p class="card-sci"><i>Indirana brachytarsus</i></p>
-        
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/indirana-chiravasi.png" alt="QR code for Indirana chiravasi">
-      <div>
-        <div class="card-acc">RX-004</div>
-        <p class="card-sci"><i>Indirana chiravasi</i></p>
-        
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/indirana-duboisi.png" alt="QR code for Indirana duboisi">
-      <div>
-        <div class="card-acc">RX-005</div>
-        <p class="card-sci"><i>Indirana duboisi</i></p>
-        
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/indirana-gundia.png" alt="QR code for Indirana gundia">
-      <div>
-        <div class="card-acc">RX-006</div>
-        <p class="card-sci"><i>Indirana gundia</i></p>
-        
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/indirana-leithii.png" alt="QR code for Indirana leithii">
-      <div>
-        <div class="card-acc">RX-007</div>
-        <p class="card-sci"><i>Indirana leithii</i></p>
-        
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/indirana-longicrus.png" alt="QR code for Indirana longicrus">
-      <div>
-        <div class="card-acc">RX-008</div>
-        <p class="card-sci"><i>Indirana longicrus</i></p>
-        
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/indirana-paramakri.png" alt="QR code for Indirana paramakri">
-      <div>
-        <div class="card-acc">RX-009</div>
-        <p class="card-sci"><i>Indirana paramakri</i></p>
-        
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/indirana-salelkari.png" alt="QR code for Indirana salelkari">
-      <div>
-        <div class="card-acc">RX-010</div>
-        <p class="card-sci"><i>Indirana salelkari</i></p>
-        
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/indirana-sarojamma.png" alt="QR code for Indirana sarojamma">
-      <div>
-        <div class="card-acc">RX-011</div>
-        <p class="card-sci"><i>Indirana sarojamma</i></p>
-        
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/indirana-semipalmata.png" alt="QR code for Indirana semipalmata">
-      <div>
-        <div class="card-acc">RX-012</div>
-        <p class="card-sci"><i>Indirana semipalmata</i></p>
-        
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/indirana-tenuilingua.png" alt="QR code for Indirana tenuilingua">
-      <div>
-        <div class="card-acc">RX-013</div>
-        <p class="card-sci"><i>Indirana tenuilingua</i></p>
-        
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/indirana-tysoni.png" alt="QR code for Indirana tysoni">
-      <div>
-        <div class="card-acc">RX-014</div>
-        <p class="card-sci"><i>Indirana tysoni</i></p>
-        
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/indirana-yadera.png" alt="QR code for Indirana yadera">
-      <div>
-        <div class="card-acc">RX-015</div>
-        <p class="card-sci"><i>Indirana yadera</i></p>
-        
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/walkerana-diplosticta.png" alt="QR code for Walkerana diplosticta">
-      <div>
-        <div class="card-acc">RX-016</div>
-        <p class="card-sci"><i>Walkerana diplosticta</i></p>
-        <div class="card-common">Spotted Leaping Frog</div>
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/walkerana-leptodactyla.png" alt="QR code for Walkerana leptodactyla">
-      <div>
-        <div class="card-acc">RX-017</div>
-        <p class="card-sci"><i>Walkerana leptodactyla</i></p>
-        <div class="card-common">Slender-toed Leaping Frog</div>
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/walkerana-muduga.png" alt="QR code for Walkerana muduga">
-      <div>
-        <div class="card-acc">RX-018</div>
-        <p class="card-sci"><i>Walkerana muduga</i></p>
-        
-      </div>
-    </div>
-    <div class="qr-card">
-      <img src="assets/qr/walkerana-phrynoderma.png" alt="QR code for Walkerana phrynoderma">
-      <div>
-        <div class="card-acc">RX-019</div>
-        <p class="card-sci"><i>Walkerana phrynoderma</i></p>
-        
-      </div>
-    </div>
+    <div class="card-grid" id="card-grid">
+      <p class="empty-state">Loading catalog&hellip;</p>
     </div>
   </div>
+  <script src="assets/js/util.js"></script>
+  <script>
+    function escapeHtml(s){return s?String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'):'';}
+    document.addEventListener('DOMContentLoaded', async () => {
+      const grid = document.getElementById('card-grid');
+      try {
+        const data = await loadCatalog('');
+        const baseUrl = (data.config && data.config.base_url || '').replace(/\/$/, '');
+        const species = data.species || [];
+        grid.innerHTML = species.map((sp) => `
+          <div class="qr-card">
+            <span class="qr-slot" data-slug="${escapeHtml(sp.slug)}"></span>
+            <div>
+              <div class="card-acc">${escapeHtml(sp.accession)}</div>
+              <p class="card-sci"><i>${escapeHtml(sp.genus)} ${escapeHtml(sp.species)}</i></p>
+              ${sp.common_name ? `<div class="card-common">${escapeHtml(sp.common_name)}</div>` : ''}
+            </div>
+          </div>`).join('');
+
+        grid.querySelectorAll('.qr-slot').forEach((slot) => {
+          const slug = slot.getAttribute('data-slug');
+          const img = document.createElement('img');
+          img.width = 96; img.height = 96;
+          img.alt = 'QR code for ' + slug;
+          img.src = `assets/qr/${slug}.png`;
+          img.onerror = () => {
+            // No pre-generated PNG committed yet (e.g. added via admin) --
+            // render one on the fly instead, pointed at species.html?slug=.
+            const canvas = document.createElement('canvas');
+            slot.replaceChild(canvas, img);
+            const url = `${baseUrl}/species.html?slug=${encodeURIComponent(slug)}`;
+            if (window.QRCode) QRCode.toCanvas(canvas, url, { width: 96, margin: 1 });
+          };
+          slot.appendChild(img);
+        });
+      } catch (err) {
+        grid.innerHTML = `<p class="empty-state">Could not load catalog: ${escapeHtml(err.message)}</p>`;
+      }
+    });
+  </script>
 </body>
 </html>
