@@ -44,8 +44,7 @@ function renderSpecies(sp, cfg) {
   const habEl = document.getElementById('habitat-text');
   if (sp.habitat) { habEl.textContent = sp.habitat; habEl.classList.remove('tbd'); }
   else { habEl.textContent = 'No habitat notes yet.'; habEl.classList.add('tbd'); }
-
-
+}
 document.addEventListener('DOMContentLoaded', async () => {
   const slug = qs('slug');
   const root = document.getElementById('species-root');
