@@ -116,6 +116,21 @@ textarea { min-height:120px; resize:vertical; }
                   <div id="audio-current" class="field-hint"></div>
                   <div id="audio-viz-container" class="viz-box"></div>
                 </div>
+                <form id="speciesForm" enctype="multipart/form-data">
+  <label>Species Name</label><br>
+  <input type="text" name="speciesName" required><br><br>
+
+  <label>Audio File</label><br>
+  <input type="file" name="audioFile" accept="audio/*" required><br><br>
+
+  <label>Image File</label><br>
+  <input type="file" name="imageFile" accept="image/*" required><br><br>
+
+  <label>Description</label><br>
+  <textarea name="description" required></textarea><br><br>
+
+  <button type="submit">Save Species</button>
+</form>
                 <div class="field span-2">
                   <span class="label">QR preview</span>
                   <div class="qr-box">
