@@ -7,18 +7,6 @@
   },
   "species": [
     {
-      "slug": "indirana-semipalmata",
-      "accession": "RX-012",
-      "family": "Ranixalidae",
-      "genus": "Indirana",
-      "species": "semipalmata",
-      "authority": "",
-      "common_name": "",
-      "identification": "",
-      "habitat": "",
-      "audio": ""
-    },
-    {
       "slug": "walkerana-leptodactyla",
       "accession": "RX-017",
       "family": "Ranixalidae",
