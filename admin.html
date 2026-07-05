@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — Frog Call Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.admin-page { padding: 34px 0 56px; }
+.admin-grid { display:grid; grid-template-columns: 320px minmax(0,1fr); gap:24px; align-items:start; }
+.admin-card { background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); box-shadow:0 10px 24px rgba(28,43,31,.04); }
+.admin-card h2, .admin-card h3 { margin:0; }
+.admin-card-header { padding:16px 18px; border-bottom:1px solid var(--line); }
+.admin-card-body { padding:18px; }
+.admin-status { font-family:var(--font-mono); font-size:.78rem; color:var(--ink-dim); }
+.admin-help { color:var(--ink-dim); max-width:70ch; }
+.admin-gate { max-width:760px; margin:0 auto 24px; }
+.form-grid { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:16px; }
+.form-grid .span-2 { grid-column:1 / -1; }
+.field { display:flex; flex-direction:column; gap:6px; }
+.label { font-family:var(--font-mono); font-size:.76rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-dim); }
+input, textarea { width:100%; border:1px solid var(--line-strong); background:#fff; color:var(--ink); padding:10px 12px; border-radius:3px; font:inherit; }
+textarea { min-height:120px; resize:vertical; }
+.button-row { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+.btn { appearance:none; border:1px solid var(--forest); background:var(--forest); color:#fff; padding:10px 14px; border-radius:3px; font:600 .95rem var(--font-body); cursor:pointer; }
+.btn:hover { background:var(--forest-dim); }
+.btn-ghost { background:#fff; color:var(--forest); }
+.btn-danger { background:var(--danger); border-color:var(--danger); }
+.btn-danger:hover { filter:brightness(.95); }
+.admin-list { max-height:70vh; overflow:auto; }
+.admin-list-item { width:100%; text-align:left; padding:12px 14px; border:0; border-bottom:1px solid var(--line); background:transparent; cursor:pointer; display:flex; flex-direction:column; gap:4px; }
+.admin-list-item:hover, .admin-list-item.active { background:var(--surface); }
+.admin-list-item .sci { font-weight:700; color:var(--ink); }
+.admin-list-item .acc { font-family:var(--font-mono); font-size:.76rem; color:var(--ink-dim); }
+.field-hint { color:var(--ink-dim); font-size:.95rem; }
+.dropzone { border:1px dashed var(--line-strong); background:var(--surface); padding:16px; border-radius:3px; cursor:pointer; }
+.dropzone.drag { border-color:var(--clay); background:#faf3ee; }
+.viz-box, .qr-box { border:1px solid var(--line); background:#fff; padding:12px; border-radius:3px; }
+.inline-checks { display:flex; flex-wrap:wrap; gap:18px; margin:8px 0 0; }
+.inline-checks label { display:flex; gap:8px; align-items:flex-start; color:var(--ink-dim); }
+.inline-checks input { width:auto; margin-top:4px; }
+.danger-note { border-left:3px solid var(--danger); background:#fff6f3; padding:12px 14px; color:#6b2b20; }
+@media (max-width: 900px) { .admin-grid { grid-template-columns: 1fr; } .form-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Frog Call Atlas</a>
+    <nav>
+      <a href="index.html">Catalog</a>
+      <a href="species.html">Species template</a>
+      <a href="admin.html" aria-current="page">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<main class="admin-page">
+  <div class="wrap">
+    <section id="admin-gate" class="admin-card admin-gate">
+      <div class="admin-card-header">
+        <h1 style="margin:0;font-family:var(--font-display);font-size:2rem;">Admin access</h1>
+      </div>
+      <div class="admin-card-body">
+        <p class="admin-help">Connect this page to your GitHub repository with a Personal Access Token that can edit repository contents. The panel reads and writes <code>data/species.json</code> and can also manage audio and QR files.</p>
+        <div class="form-grid">
+          <label class="field"><span class="label">Repository</span><input id="gh-owner-repo" placeholder="Skb2897/Croaks-and-Whistles"></label>
+          <label class="field"><span class="label">Branch</span><input id="gh-branch" value="main"></label>
+          <label class="field span-2"><span class="label">GitHub token</span><input id="gh-token" type="password" placeholder="GitHub personal access token"></label>
+        </div>
+        <div class="button-row" style="margin-top:16px;">
+          <button type="button" class="btn" id="connect-btn">Connect</button>
+          <span id="connect-status" class="admin-status"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="admin-main" style="display:none;">
+      <div class="button-row" style="margin-bottom:16px; justify-content:space-between;">
+        <div id="admin-status" class="admin-status"></div>
+        <button type="button" id="signout-btn" class="btn btn-ghost">Forget token</button>
+      </div>
+
+      <div class="admin-grid">
+        <aside class="admin-card">
+          <div class="admin-card-header button-row" style="justify-content:space-between;">
+            <h2 style="font-family:var(--font-display);font-size:1.35rem;">Species list</h2>
+            <button type="button" id="new-species-btn" class="btn btn-ghost">+ New species</button>
+          </div>
+          <div id="admin-list" class="admin-list"></div>
+        </aside>
+
+        <section class="admin-card">
+          <div class="admin-card-header">
+            <h2 id="panel-title" style="font-family:var(--font-display);font-size:1.45rem;">Select a species</h2>
+          </div>
+          <div class="admin-card-body">
+            <form id="species-form" style="display:none;">
+              <div class="form-grid">
+                <label class="field"><span class="label">Family</span><input id="f-family" required></label>
+                <label class="field"><span class="label">Accession</span><input id="f-accession"></label>
+                <label class="field"><span class="label">Genus</span><input id="f-genus" required></label>
+                <label class="field"><span class="label">Species</span><input id="f-species" required></label>
+                <label class="field span-2"><span class="label">Authority</span><input id="f-authority"></label>
+                <label class="field span-2"><span class="label">Common name</span><input id="f-common"></label>
+                <label class="field span-2"><span class="label">Slug</span><input id="f-slug"></label>
+                <label class="field span-2"><span class="label">Identification</span><textarea id="f-identification"></textarea></label>
+                <label class="field span-2"><span class="label">Habitat</span><textarea id="f-habitat"></textarea></label>
+                <div class="field span-2">
+                  <span class="label">Audio</span>
+                  <div id="audio-dropzone" class="dropzone">Click or drop an audio file here to upload and preview it.</div>
+                  <input id="audio-input" type="file" accept="audio/*" hidden>
+                  <div id="audio-current" class="field-hint"></div>
+                  <div id="audio-viz-container" class="viz-box"></div>
+                </div>
+                <div class="field span-2">
+                  <span class="label">QR preview</span>
+                  <div class="qr-box">
+                    <canvas id="qr-canvas" width="120" height="120"></canvas>
+                    <p id="qr-url-hint" class="field-hint">Select or create a species to generate a QR preview.</p>
+                    <button type="button" id="commit-qr-btn" class="btn btn-ghost">Commit QR PNG</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="danger-note" style="margin-top:18px;">
+                Deleting removes the species entry from <code>data/species.json</code>. You can also choose to remove the committed audio file and QR PNG from the repository.
+              </div>
+              <div class="inline-checks">
+                <label><input type="checkbox" id="delete-audio-toggle"> Remove committed audio file too</label>
+                <label><input type="checkbox" id="delete-qr-toggle"> Remove committed QR PNG too</label>
+              </div>
+
+              <div class="button-row" style="margin-top:18px;">
+                <button type="submit" id="save-btn" class="btn">Save species</button>
+                <button type="button" id="delete-btn" class="btn btn-danger">Delete species</button>
+                <span id="save-status" class="admin-status" aria-live="polite"></span>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    A field reference for anuran advertisement calls ·
+    <a href="https://github.com/Skb2897/Croaks-and-Whistles" target="_blank" rel="noopener noreferrer">source on GitHub</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/audio-viz.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>
