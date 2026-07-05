@@ -7,18 +7,6 @@
   },
   "species": [
     {
-      "slug": "walkerana-muduga",
-      "accession": "RX-018",
-      "family": "Ranixalidae",
-      "genus": "Walkerana",
-      "species": "muduga",
-      "authority": "",
-      "common_name": "",
-      "identification": "",
-      "habitat": "",
-      "audio": ""
-    },
-    {
       "slug": "pedostibes-tuberculosus",
       "family": "Bufonidae",
       "accession": "Ped_01",
