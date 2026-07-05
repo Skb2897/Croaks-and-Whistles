@@ -7,18 +7,6 @@
   },
   "species": [
     {
-      "slug": "indirana-bhadrai",
-      "accession": "RX-002",
-      "family": "Ranixalidae",
-      "genus": "Indirana",
-      "species": "bhadrai",
-      "authority": "",
-      "common_name": "",
-      "identification": "",
-      "habitat": "",
-      "audio": ""
-    },
-    {
       "slug": "indirana-brachytarsus",
       "accession": "RX-003",
       "family": "Ranixalidae",
