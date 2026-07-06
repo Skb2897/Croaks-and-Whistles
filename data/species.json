@@ -77,6 +77,18 @@
       "identification": "Medium-sized leaping frogs endemic to the Western Ghats. \nThe hind-limbs have reduced webbing compared to its congeners.\nThey have a prominent tympanum.\nThey have semi-terrestrial tadpoles.",
       "habitat": "Leaf litter and Rocky surfaces often with film of water.",
       "audio": "assets/audio/indirana-semipalmata.wav"
+    },
+    {
+      "slug": "minervarya-sahyadris",
+      "family": "Dicroglossidae",
+      "accession": "Min_01",
+      "genus": "Minervarya",
+      "species": "sahyadris",
+      "authority": "Sanchez, Biju, Islam, Hasan, Ohler, Vences, and Kurabayashi, 2018",
+      "common_name": "Sahyadri White Lipped Cricket Frog",
+      "identification": "Minervarya sahyadris is a small-sized frog endemic to the Western Ghats of India.\nThis species is about 22 mm in length and is nocturnal.\nThey have a pointed snout and a supratympanic fold from back of eye to shoulder",
+      "habitat": "Open terrestrial habitats; breeds around puddles",
+      "audio": "assets/audio/minervarya-sahyadris.wav"
     }
   ]
 }
