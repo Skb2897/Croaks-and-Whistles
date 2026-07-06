@@ -65,6 +65,18 @@
       "identification": "Reddish brown Iris; Large Tympanum; Strong fold from eye to shoulder; Back yellow, sides brown",
       "habitat": "On land- forest floor, leaf litter, tree base, stream sides, dam backwaters",
       "audio": "assets/audio/clinotarsus-curtipes.wav"
+    },
+    {
+      "slug": "indirana-semipalmata",
+      "family": "Ranixalidae",
+      "accession": "Ind_01",
+      "genus": "Indirana",
+      "species": "semipalmata",
+      "authority": "Boulenger, 1882",
+      "common_name": "Half-webbed Leaping Frog",
+      "identification": "Medium-sized leaping frogs endemic to the Western Ghats. \nThe hind-limbs have reduced webbing compared to its congeners.\nThey have a prominent tympanum.\nThey have semi-terrestrial tadpoles.",
+      "habitat": "Leaf litter and Rocky surfaces often with film of water.",
+      "audio": "assets/audio/indirana-semipalmata.wav"
     }
   ]
 }
